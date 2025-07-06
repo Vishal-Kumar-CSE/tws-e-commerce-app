@@ -1,9 +1,9 @@
 @Library('my-shared-lib') _
 
-pipeline {
+pipeline{
     agent any;
 
-    environment {
+    environment{
         // Update the main app image name to match the deployment file
         DOCKER_IMAGE_NAME = 'kmvishal/tws-e-commerce-app'
         DOCKER_MIGRATION_IMAGE_NAME = 'kmvishal/easyshop-migration'
@@ -59,10 +59,6 @@ pipeline {
                 echo 'Testing will be done soon...'
             }
         }
- 
-
-        
-    }
 
     stage('Security_Scan_with_Trivy') {
         steps {
@@ -97,5 +93,6 @@ pipeline {
         steps {
             echo 'Updating manifest file...'
         }
+    }
     }
 }
