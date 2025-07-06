@@ -3,6 +3,10 @@
 pipeline {
     agent any
 
+        options {
+        skipDefaultCheckout()
+    }
+
     environment {
         DOCKER_IMAGE_NAME = 'kmvishal/tws-e-commerce-app'
         DOCKER_MIGRATION_IMAGE_NAME = 'kmvishal/easyshop-migration'
