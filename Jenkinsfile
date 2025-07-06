@@ -98,5 +98,4 @@ pipeline {
             echo 'Updating manifest file...'
         }
     }
-    }
 }
