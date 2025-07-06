@@ -1,7 +1,7 @@
-@Library('my-shared-lib') _
+@Library('my-shared-lib')_
 
 pipeline {
-    agent any
+    agent any;
 
     environment {
         DOCKER_IMAGE_NAME = 'kmvishal/tws-e-commerce-app'
