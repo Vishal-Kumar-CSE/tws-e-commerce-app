@@ -52,17 +52,51 @@ pipeline {
                 )
             }
         }
-    }
+        }
+
+        stage('Test_Cases') {
+            steps {
+                echo 'Testing will be done soon...'
+            }
+        }
  
 
-        stage('Build') {
-            steps {
-                echo 'Building...'
+        
+    }
 
+    stage('Security_Scan_with_Trivy') {
+        steps {
+            trivy_scan()
+        }
+    }
+
+    stage('Push_Docker_Image') {
+        parallel{
+            stage('Push_Main_App_Docker_Image') {
+                steps {
+                    docker_push(
+                        imageName: env.DOCKER_IMAGE_NAME,
+                        imageTag: env.DOCKER_IMAGE_TAG,
+                        credentials: 'DockerHubPat'
+                    )
+                }
+            }
+            stage('Push_Migration_Docker_Image') {
+                steps {
+                    docker_push(
+                        imageName: env.DOCKER_MIGRATION_IMAGE_NAME,
+                        imageTag: env.DOCKER_IMAGE_TAG,
+                        credentials: 'DockerHubPat'
+                    )
+                }
             }
         }
     }
-}
 
-
+    stage('Update_Manifest_File') {
+        steps {
+            echo 'Updating manifest file...'
+        }
+    }
+    }
 }
