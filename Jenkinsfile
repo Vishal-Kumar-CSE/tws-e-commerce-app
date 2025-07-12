@@ -15,10 +15,9 @@ pipeline {
 
         stage('Cleanup Workspace') {
             steps {
-                // script {
-                //     clean_ws()
-                // }
-                echo "testing my pipeline"
+                script {
+                    clear_ws()
+                }
             }
         }
 
