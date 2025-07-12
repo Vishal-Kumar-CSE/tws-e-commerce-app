@@ -32,6 +32,7 @@ pipeline {
         stage('Build Docker Images') {
             parallel {
                 stage('Build Main App Image') {
+                    sh "whoami"
                     steps {
                         script {
                             docker_build(
@@ -47,6 +48,7 @@ pipeline {
                 stage('Build Migration Image') {
                     steps {
                         script {
+                            sh "whoami"
                             docker_build(
                                 imageName: env.DOCKER_MIGRATION_IMAGE_NAME,
                                 imageTag: env.DOCKER_IMAGE_TAG,
