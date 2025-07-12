@@ -23,9 +23,9 @@ FROM node:18-alpine AS runner
 WORKDIR /app
 
 # Copy necessary files from builder stage
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
+COPY --from=Build /app/.next/standalone ./
+COPY --from=Build /app/.next/static ./.next/static
+COPY --from=Build /app/public ./public
 
 # Set environment variables
 ENV NODE_ENV=production
