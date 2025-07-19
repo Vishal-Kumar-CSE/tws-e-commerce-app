@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
         - name: easyshop
-          image: kmvishal/tws-e-commerce-app:22
+          image: kmvishal/tws-e-commerce-app:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
