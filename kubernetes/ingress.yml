@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - easyshop.letsdeployit.com
-    secretName: easyshop-tls-secret  # Cert-Manager will manage this
+    - kumarbusiness.online
+    secretName: kumarbusiness-tls-secret   # Updated for your domain
   rules:
-  - host: easyshop.letsdeployit.com
+  - host: kumarbusiness.online
     http:
       paths:
       - path: /
