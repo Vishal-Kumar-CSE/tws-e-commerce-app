@@ -1,3 +1,14 @@
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: easyshop-config
+#   namespace: ecommerce
+# data:
+#   MONGODB_URI: "mongodb://mongodb-service:27017/easyshop"
+#   NODE_ENV: "production"
+#   NEXT_PUBLIC_API_URL: "https://easyshop.letsdeployit.com/api"
+#   NEXTAUTH_URL: "https://easyshop.letsdeployit.com/"
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -5,8 +16,6 @@ metadata:
   namespace: ecommerce
 data:
   MONGODB_URI: "mongodb://mongodb-service:27017/easyshop"
-  NODE_ENV: "production"
-  NEXT_PUBLIC_API_URL: "https://easyshop.letsdeployit.com/api"
-  NEXTAUTH_URL: "https://easyshop.letsdeployit.com/"
-  NEXTAUTH_SECRET: "/Uc10a/9lpC58MU28n0k+Du++ctzYh4C/XX7uoQYgvk="
-  JWT_SECRET: "2cf02cb7db689c5584b79bfa3a98ddecf00d49b871d16346cf1ede434f6befff"
+  NEXT_PUBLIC_API_URL="http://52.177.144.18/api"
+  NEXTAUTH_URL="http://52.177.144.18"
+
