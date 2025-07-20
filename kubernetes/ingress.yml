@@ -11,10 +11,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - test.kumarbusiness.online
+        - dev.kumarbusiness.online
       secretName: kumarbusiness-tls-secret
   rules:
-    - host: test.kumarbusiness.online
+    - host: dev.kumarbusiness.online
       http:
         paths:
           - path: /

@@ -7,8 +7,8 @@ spec:
     email: vishalk3014687@gmail.com
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: letsencrypt-prod-key  # 🔧 Removed the space in `ke y`
+      name: letsencrypt-prod-key  
     solvers:
       - http01:
           ingress:
-            class: nginx           # ✅ Make sure ingress-nginx is installed and working
+            class: nginx
