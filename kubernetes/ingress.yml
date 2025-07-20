@@ -5,13 +5,13 @@ metadata:
   namespace: ecommerce
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: "50m"
-    kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
+  ingressClassName: nginx
   tls:
   - hosts:
     - kumarbusiness.online
-    secretName: kumarbusiness-tls-secret   # Updated for your domain
+    secretName: kumarbusiness-tls-secret
   rules:
   - host: kumarbusiness.online
     http:
