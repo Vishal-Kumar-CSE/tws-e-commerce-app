@@ -1,15 +1,14 @@
-kind: ClusterIssuer
 apiVersion: cert-manager.io/v1
-
+kind: ClusterIssuer
 metadata:
   name: letsencrypt-prod
 spec:
   acme:
-    server: https://acme-v02.api.letsencrypt.org/directory
     email: vishalk3014687@gmail.com
+    server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: letsencrypt-prod-key
+      name: letsencrypt-prod-key  # 🔧 Removed the space in `ke y`
     solvers:
-    - http01:
-        ingress:
-          class: nginx
+      - http01:
+          ingress:
+            class: nginx           # ✅ Make sure ingress-nginx is installed and working
