@@ -1,25 +1,21 @@
+# easyshop-ingress.yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: easyshop-ingress
   namespace: ecommerce
   annotations:
-    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts:
-    - kumarbusiness.online
-    secretName: kumarbusiness-tls-secret
   rules:
-  - host: kumarbusiness.online
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: easyshop-service
-            port:
-              number: 80
+    - host: kumarbusiness.online
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: easyshop-service
+                port:
+                  number: 80
